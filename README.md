@@ -1,78 +1,67 @@
-# 🤖 AI Resume Screener
+# 🤖 ML ATS Resume Screener
 
-An AI-powered Resume Screening application that helps job seekers evaluate their resumes against a job description. The application provides an ATS compatibility score, identifies missing skills, highlights strengths, and generates personalized improvement suggestions using AI.
+A Machine Learning-based ATS (Applicant Tracking System) Resume Screener that evaluates resumes against job descriptions using **TF-IDF similarity**, **skill matching**, and an interactive **Streamlit** interface.
 
 ---
 
-## 🚀 Features
+## ✨ Features
 
-* 📄 Upload resumes in PDF format
-* 📝 Paste any job description
-* 🤖 AI-powered resume analysis
-* 📊 ATS compatibility score
-* 🎯 Skill match analysis
-* ❌ Missing skills detection
-* 💡 Personalized resume improvement suggestions
-* 📈 Recruiter-friendly analysis dashboard
-* ⚡ Fast and interactive Streamlit interface
+- 📄 Upload Resume (PDF)
+- 📋 Upload Job Description (PDF/TXT)
+- 📊 ATS Compatibility Score
+- ✅ Matched Skills Detection
+- ❌ Missing Skills Analysis
+- 📈 TF-IDF Resume Similarity Score
+- 📧 Email & Phone Extraction
+- 💡 Resume Improvement Suggestions
+- ⚡ Interactive Streamlit Dashboard
 
 ---
 
 ## 🛠️ Tech Stack
 
-**Frontend**
-
-* Streamlit
-
-**Backend**
-
-* Python
-
-**Libraries**
-
-* Pandas
-* PyPDF2 / pdfplumber
-* python-dotenv
+- Python
+- Streamlit
+- Scikit-learn
+- PyMuPDF (fitz)
+- Plotly
 
 ---
 
 ## 📂 Project Structure
 
 ```text
-AI-Resume-Screener/
+ML-ATS-Resume-Screener/
 │
 ├── app.py
+├── ats.py
+├── jd_parser.py
+├── pdf_parser.py
+├── suggestions.py
+├── utils.py
 ├── requirements.txt
-├── .env.example
-├── utils/
-├── assets/
-├── screenshots/
-└── README.md
+├── README.md
+└── .gitignore
 ```
 
 ---
 
-## ⚙️ Installation
+## 🚀 Installation
 
-### 1. Clone the repository
-
-```bash
-git clone [https://github.com/Garimashrigithub/AI-Resume-Screening-System]
-```
-
-### 2. Navigate to the project folder
+### Clone the Repository
 
 ```bash
-cd AI-Resume-Screener
+git clone https://github.com/Garimashrigithub/ML-ATS-Resume-Screener.git
+cd ML-ATS-Resume-Screener
 ```
 
-### 3. Create a virtual environment
+### Create Virtual Environment
 
 ```bash
 python -m venv venv
 ```
 
-### 4. Activate the virtual environment
+### Activate Virtual Environment
 
 **Windows**
 
@@ -80,66 +69,61 @@ python -m venv venv
 venv\Scripts\activate
 ```
 
-### 5. Install dependencies
+### Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
-```
 
-### 6. Run the application
+### Run the Application
 
 ```bash
-python -m streamlit run app.py
+streamlit run app.py
 ```
 
 ---
 
-## 📋 How It Works
+## 📖 How It Works
 
-1. Upload your resume in PDF format.
-2. Paste the job description.
+1. Upload your Resume (PDF).
+2. Upload the Job Description (PDF or TXT).
 3. Click **Analyze Resume**.
-4. The AI compares the resume with the job description.
-5. Review:
-
-   * ATS Score
-   * Matching Skills
-   * Missing Skills
-   * Strengths
-   * Improvement Suggestions
+4. View:
+   - ATS Score
+   - Skill Match
+   - Missing Skills
+   - Resume Similarity
+   - Improvement Suggestions
 
 ---
 
-## 📸 Screenshots
+## 📊 ATS Scoring
 
-Add screenshots of:
+The final ATS score is calculated using:
 
-* Home Page
-* Resume Upload
-* Job Description Input
-* Analysis Result
-* ATS Score Dashboard
+- **75% Skill Matching**
+- **25% TF-IDF Cosine Similarity**
 
-Example:
+- 
+## 📦 Requirements
 
 ```text
-screenshots/home.png
-screenshots/analysis.png
-screenshots/results.png
+streamlit>=1.32,<2.0
+PyMuPDF>=1.24,<2.0
+plotly>=5.20,<6.0
+scikit-learn>=1.3,<2.0
 ```
 
 ---
 
-## 🔮 Future Enhancements
+## 🔮 Future Improvements
 
-* Resume ranking for multiple candidates
-* Downloadable PDF report
-* Authentication system
-* Recruiter dashboard
-* Multi-language support
-* OCR support for scanned resumes
-* Resume history and analytics
+- Multi-Resume Comparison
+- Resume Ranking
+- OCR Support for Scanned PDFs
+- Export Analysis Report
+- AI-powered Resume Suggestions
+- Recruiter Dashboard
 
 ---
 
@@ -147,17 +131,5 @@ screenshots/results.png
 
 **Garima Shrivaspat**
 
-B.Tech – Computer Science & Engineering
+B.Tech – Computer Science & Engineering.
 
-Skills:
-
-* Python
-* Machine Learning
-* Data Science
-* Streamlit
-
----
-
-## ⭐ If you found this project helpful
-
-If you like this project, consider giving it a ⭐ on GitHub. It helps others discover the project and motivates further development.
